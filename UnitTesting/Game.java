@@ -1,7 +1,5 @@
 package UnitTesting;
 
-import java.util.Random;
-
 /**
  * A basic game that will leverage a few of the classes we build 
  * throughout the semester
