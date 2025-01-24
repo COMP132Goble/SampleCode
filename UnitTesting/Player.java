@@ -21,6 +21,8 @@ public class Player {
         System.out.println( name + " is at " + health + "% health");
     }
 
+    // mutator methods
+
     /**
      * The player has been attacked, so let's remove some of their health
      * @param amount
@@ -43,5 +45,14 @@ public class Player {
      */
     public void heal(double amount) {
         health -= amount;
+    }
+
+    // accessor methods
+    public String getName() {
+        return name;
+    }
+
+    public double getHealth() {
+        return health;
     }
 }

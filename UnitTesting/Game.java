@@ -15,12 +15,12 @@ public class Game {
 
         player1.show();
 
-        // generate a random value between 0 and 100 as a double
-        Random r = new Random();
-        double minValue = 0.0;
-        double maxValue = 100.0;
-        double attackValue = minValue + (maxValue - minValue) * r.nextDouble();
-
+        // create a monster and have it attack Frodo
+        Monster monster;
+        monster = new Monster();
+        double attackValue = monster.smallAttack();
+        // double attackValue = monster.bigAttack();
+        
         // now let's attack Frodo and then let him take a long rest
         player1.takeDameage(attackValue);
         player1.show();
