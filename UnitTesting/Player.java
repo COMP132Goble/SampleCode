@@ -29,7 +29,7 @@ public class Player {
      */
     public void takeDameage(double amount) {
         System.out.println("Ahh! " + name + " has been attacked!");
-        health += amount;
+        health -= amount;   // health = health + amount
     }
 
     /**
@@ -44,7 +44,7 @@ public class Player {
      * @param amount
      */
     public void heal(double amount) {
-        health -= amount;
+        health -= amount;       // health = health - amount
     }
 
     // accessor methods

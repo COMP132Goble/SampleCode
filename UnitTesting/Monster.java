@@ -11,7 +11,7 @@ public class Monster {
 
     public double smallAttack() {
         Random r = new Random();
-        double minValue = 0.0;
+        double minValue = 1.0;
         double maxValue = 6.0;
         double attackValue = minValue + (maxValue - minValue) * r.nextDouble();
         return attackValue;
@@ -19,7 +19,7 @@ public class Monster {
 
     public double bigAttack() {
         Random r = new Random();
-        double minValue = 0.0;
+        double minValue = 1.0;
         double maxValue = 20.0;
         double attackValue = minValue + (maxValue - minValue) * r.nextDouble();
         return attackValue;
