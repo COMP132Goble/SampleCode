@@ -26,6 +26,9 @@ public class ArrayListDemo {
         theList.remove(0);
         System.out.println("Now Object at index 0 is " + theList.get(0));
         System.out.println("Now size is " + theList.size());
+
+        // System.out.println("Now the Object at index 1 is " + theList.get(theList.size() - 1));
+
     }
 
     public static void main(String[] args) {

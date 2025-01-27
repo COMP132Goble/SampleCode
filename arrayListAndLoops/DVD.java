@@ -17,6 +17,8 @@ public class DVD {
     private String mpaaRating;
     private int rentalLength;
     private int nightsRented;
+    private String genre;
+    private int numOfCopies;
 
     /**
      * Create a new DVD with the specified title, MPAA rating and
@@ -29,7 +31,7 @@ public class DVD {
      * @param initLength the number of nights for which 
      * the DVD can be rented.
      */
-    public DVD(String initTitle, String initRating, int initLength) {
+    public DVD(String initTitle, String initRating, int initLength, String genre) {
         title = initTitle;
         // next line calls the String constructor explicitly,
         // for technical reasons -- it will help us demonstrate the
@@ -37,6 +39,8 @@ public class DVD {
         mpaaRating = new String(initRating);
         rentalLength = initLength;
         nightsRented = 0;
+        numOfCopies = 100;
+        this.genre = genre;
     }
 
     /**
@@ -75,6 +79,14 @@ public class DVD {
     */
     public int getNightsRented() {
         return nightsRented;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public int getNumOfCopies() {
+        return numOfCopies;
     }
     
     /**
