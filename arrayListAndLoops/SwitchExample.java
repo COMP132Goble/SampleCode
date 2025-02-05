@@ -11,8 +11,10 @@ public class SwitchExample {
         score = input.nextInt();
         input.close();
 
-        if (score >= 90)
+        if (score >= 90) {
             grade = 'A';
+            System.out.println("Congrats!");
+        }
         else if (score >= 80)
             grade = 'B';
         else if (score >= 70)

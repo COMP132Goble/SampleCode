@@ -61,6 +61,12 @@ public class VideoStore {
         return null;
     }
 
+    public void removeDVD(int index) {
+        if (index >= 0 && index < listVideos.size()) {
+            listVideos.remove(index);
+        }
+    }
+
     public void printAllDVDs() {
         DVD aDVD = listVideos.get(0);
         String str = aDVD.toString();
