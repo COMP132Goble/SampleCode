@@ -2,7 +2,8 @@ package arrays;
 
 public class TwoDimensionalArrays {
     public static void main(String[] args) {
-        raggedArray();
+        // raggedArray();
+        rectangularArray();
     }
 
     public static void rectangularArray() {

@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Intro {
     public static void main(String[] args) {
-        example();
+        // example();
+        copying();
     }
 
     public static void basics() {
@@ -45,5 +46,41 @@ public class Intro {
         System.out.println("Contents of boolean array:");
         for (int i = 0; i < flags.length; i++)
             System.out.println("  flags[" + i + "] = " + flags[i]);
+    }
+
+    public static void copying() {
+        int[] list1 = new int[5];
+        int[] list2 = {3, 5, 7, 9, 11};
+
+        list1 = list2;
+
+        printArr(list1);
+        System.out.println("*******************************");
+        printArr(list2);
+
+        list2[0] = 13;
+        list1[1] = 15;
+
+        printArr(list1);
+        System.out.println("*******************************");
+        printArr(list2);
+
+        for(int index = 0; index < list2.length; index++) {
+            list1[index] = list2[index];
+        }
+
+        list2 = new int[10];
+        for(int index = 0; index < list1.length; index++) {
+            list2[index] = list1[index];
+        }
+        printArr(list1);
+        System.out.println("*******************************");
+        printArr(list2);
+    }
+
+    public static void printArr(int[] arr) {
+        for(int index = 0; index < arr.length; index++)
+            System.out.print(arr[index] + ", ");
+        System.out.println();
     }
 }

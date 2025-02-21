@@ -3,6 +3,11 @@ package arrays;
 public class Example {
     public static void main(String[] args) {
 
+        int[] myList = {2, 4, 6, 8, 10, 12, 14, 16};
+        double[] grades = {96.5, 88.4, 90.3, 70.1};
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+
+        
         int[][] raggedArray = new int[3][];
         raggedArray[0] = new int[2];
         raggedArray[1] = new int[3];
