@@ -16,7 +16,7 @@ public class Triangle implements MyMath {
 
     public int perimeter() {
         int first = side1 + side2;
-        double second = Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
-        return (int)(first + second);
+        double hypot = Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
+        return (int)(first + hypot);
     }
 }
