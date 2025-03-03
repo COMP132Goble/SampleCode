@@ -10,13 +10,17 @@ public class Triangle implements MyMath {
     }
 
     // === Implementation of the MyMath interface ===
-    public int area() {
+    public double area() {
         return (side1 * side2) / 2;
     }
 
-    public int perimeter() {
+    public double perimeter() {
         int first = side1 + side2;
         double hypot = Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
-        return (int)(first + hypot);
+        return (first + hypot);
+    }
+
+    public int numSides() {
+        return 3;
     }
 }

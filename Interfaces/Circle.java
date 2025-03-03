@@ -10,12 +10,16 @@ public class Circle implements MyMath {
     }
 
     // === Implementation of the MyMath interface ===
-    public int area() {
-        return (int)(Math.PI * Math.pow(radius, 2));
+    public double area() {
+        return (Math.PI * Math.pow(radius, 2));
     }
 
-    public int perimeter() {
-        int value = (int)(Math.PI * radius * 2);
+    public double perimeter() {
+        double value = Math.PI * radius * 2;
         return value;
+    }
+
+    public int numSides() {
+        return 0;
     }
 }

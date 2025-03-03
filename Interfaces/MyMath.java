@@ -1,6 +1,7 @@
 package Interfaces;
 
 public interface MyMath {
-    public int area();
-    public int perimeter();
+    public double area();
+    public double perimeter();
+    public int numSides();
 }
