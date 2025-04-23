@@ -1,8 +1,61 @@
 package adt;
 
-public class MyLinkedList {
+public class MyLinkedList implements COMP132List {
     private SinglyLinkedNode head;
-    private int size = 0;
+    private SinglyLinkedNode tail;
+    private int size;
+
+    public MyLinkedList() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
+    public static void main(String[] args) {
+        MyLinkedList list = new MyLinkedList();
+        list.add("Hello");
+        list.add("World");
+        list.printList();
+        // System.out.println(list.get(1));
+        // list.set(1, "class");
+        // list.printList();
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public void add(Object element) {
+        
+    }
+
+    private SinglyLinkedNode getNode(int index) {
+        SinglyLinkedNode node = head;
+        for(int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
+    public Object get(int index) throws IndexOutOfBoundsException {
+        if (index >= size || index < 0) {
+            throw new IndexOutOfBoundsException();
+        }
+        SinglyLinkedNode current = getNode(index);
+        return current.element;
+    }
+
+    public void set(int index, Object element) throws IndexOutOfBoundsException {
+        
+    }
+
+    public void insert(int index, Object element) throws IndexOutOfBoundsException {
+
+    }
+
+    public Object remove(int index) throws IndexOutOfBoundsException {
+        return null;
+    }
 
     public void printList() {
         SinglyLinkedNode cur = head;
@@ -13,14 +66,6 @@ public class MyLinkedList {
             cur = cur.next;
         }
         System.out.println("null");
-    }
-
-    public SinglyLinkedNode getLast() {
-    	SinglyLinkedNode current = head;
-    	while(current.next !=null) {
-    		current = current.next;
-    	}
-    	return current;
     }
 
     private static class SinglyLinkedNode {
