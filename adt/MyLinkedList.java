@@ -39,7 +39,7 @@ public class MyLinkedList implements COMP132List {
 
     public Object get(int index) throws IndexOutOfBoundsException {
         if (index >= size || index < 0) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("tried to access " + index + " but the size of the list is " + size + ".");
         }
         SinglyLinkedNode current = getNode(index);
         return current.element;
