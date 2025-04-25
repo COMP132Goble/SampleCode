@@ -13,12 +13,10 @@ public class MyLinkedList implements COMP132List {
 
     public static void main(String[] args) {
         MyLinkedList list = new MyLinkedList();
-        list.add("Hello");
-        list.add("World");
-        list.printList();
-        // System.out.println(list.get(1));
-        // list.set(1, "class");
-        // list.printList();
+        list.add("A");
+        list.add("B");
+        list.add("C");
+        list.add("D");
     }
 
     public int size() {
@@ -26,7 +24,16 @@ public class MyLinkedList implements COMP132List {
     }
 
     public void add(Object element) {
-        
+        SinglyLinkedNode node = new SinglyLinkedNode(element);
+
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else {
+            tail.next = node;
+            tail = node;
+        }
+        size++;
     }
 
     private SinglyLinkedNode getNode(int index) {
@@ -39,22 +46,85 @@ public class MyLinkedList implements COMP132List {
 
     public Object get(int index) throws IndexOutOfBoundsException {
         if (index >= size || index < 0) {
-            throw new IndexOutOfBoundsException("tried to access " + index + " but the size of the list is " + size + ".");
+            throw new IndexOutOfBoundsException("tried to access " + index + 
+                    " but the size of the list is " + size + ".");
         }
         SinglyLinkedNode current = getNode(index);
         return current.element;
     }
 
     public void set(int index, Object element) throws IndexOutOfBoundsException {
-        
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("tried to set " + index + " but size is "
+                    + size + ".");
+        }
+        else {
+            SinglyLinkedNode node = getNode(index);
+            node.element = element;
+        }
     }
 
     public void insert(int index, Object element) throws IndexOutOfBoundsException {
-
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("tried to set " + index + " but size is "
+                    + size + ".");
+        }
+        else {
+            SinglyLinkedNode newNode = new SinglyLinkedNode(element);
+            
+            if (index == 0) {
+                newNode.next = head;
+                head = newNode;
+            }
+            else {
+                /*
+                 * Walk down the chain of links until pred refers to the node that will
+                 * precede the new node in the list.
+                 */
+                SinglyLinkedNode pred = head;
+                for (int i=0; i<index-1; i++) {
+                    pred = pred.next;
+                } 
+                
+                newNode.next = pred.next;
+                pred.next = newNode;
+            }
+            
+            size++;
+        }
     }
 
     public Object remove(int index) throws IndexOutOfBoundsException {
-        return null;
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("tried to set " + index + " but size is "
+                    + size + ".");
+        }
+        else {
+            Object obj = null;
+
+            if (index == 0) {
+                obj = head.element;
+                head = head.next;
+            }
+            else {
+                SinglyLinkedNode pred = head;
+                
+                for (int i=0; i<index-1; i++) {
+                    pred = pred.next;
+                } 
+                
+                SinglyLinkedNode node = pred.next;
+                obj = node.element;
+                pred.next = node.next;
+               
+                if (index == size - 1) {
+                    tail = pred;
+                }
+            }
+            
+            size--;
+            return obj;
+        }
     }
 
     public void printList() {
